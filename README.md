@@ -1,6 +1,42 @@
 # HEAD
 
-A collection of HTML head elements.
+A list of everything that could go in the `<head>` of your document
+
+## Table of Contents
+
+- [Recommended Minimum](#recommended-minimum)
+- [Elements](#elements)
+- [Meta](#meta)
+  - [Meta: Not Recommended](#meta-not-recommended)
+- [Link](#link)
+  - [Link: Not Recommended](#link-not-recommended)
+  - [Favicons](#favicons)
+- [Social](#social)
+  - [Facebook / Open Graph](#facebook--open-graph)
+  - [Facebook / Instant Articles](#facebook--instant-articles)
+  - [Twitter](#twitter)
+  - [Google+ / Schema.org](#google--schemaorg)
+  - [OEmbed](#oembed)
+- [Browsers / Platforms](#browsers--platforms)
+  - [Apple iOS](#apple-ios)
+  - [Apple Safari](#apple-safari)
+  - [Google Android](#google-android)
+  - [Google Chrome](#google-chrome)
+  - [Microsoft Internet Explorer](#microsoft-internet-explorer)
+  - [Microsoft Internet Explorer: Legacy, Do Not Use!](#microsoft-internet-explorer-legacy-do-not-use)
+- [Browsers (Chinese)](#browsers-chinese)
+  - [360 Browser](#360-browser)
+  - [QQ Mobile Browser](#qq-mobile-browser)
+  - [UC Mobile Browser](#uc-mobile-browser)
+- [App Links](#app-links)
+- [Notes](#notes)
+  - [Performance](#performance)
+- [Other Resources](#other-resources)
+- [Related Projects](#related-projects)
+- [Translations](#translations)
+- [Contributing](#contributing)
+- [Author](#author)
+- [License](#license)
 
 ## Recommended Minimum
 
@@ -10,6 +46,7 @@ Below are the essential tags for basic, minimalist websites:
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <title>Page Title</title>
 ```
 
@@ -34,49 +71,96 @@ Below are the essential tags for basic, minimalist websites:
 <script src="script.js"></script>
 ```
 
-## Meta Elements
+## Meta
 
 ``` html
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<meta name="application-name" content="Application Name">
-<meta name="description" content="150 chars">
-<meta name="subject" content="your website's subject">
-<meta name="robots" content="index,follow,noodp">
-<meta name="googlebot" content="index,follow">
-<meta name="google" content="nositelinkssearchbox">
-<meta name="google-site-verification" content="verification_token">
-<meta name="generator" content="program">
-<meta name="abstract" content="">
-<meta name="topic" content="">
-<meta name="summary" content="">
-<meta name="classification" content="business">
-<meta name="url" content="https://example.com/">
-<meta name="identifier-URL" content="https://example.com/">
-<meta name="directory" content="submission">
-<meta name="category" content="">
-<meta name="coverage" content="Worldwide">
-<meta name="distribution" content="Global">
-<meta name="rating" content="General">
-<meta name="referrer" content="never">
+
+<!-- Allows control over where resources are loaded from -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+<!-- Place as early in the document as possible -->
+<!-- Only applies to content below this tag -->
+
+<!-- Name of web application (only should be used if the website is used as an app) -->
+<meta name="application-name" content="Application Name">
+
+<!-- Short description of the page (limit to 150 characters) -->
+<!-- In *some* situations this description is used as a part of the snippet shown in the search results. -->
+<meta name="description" content="A description of the page">
+
+<!-- Control the behavior of search engine crawling and indexing -->
+<meta name="robots" content="index,follow,noodp"><!-- All Search Engines -->
+<meta name="googlebot" content="index,follow"><!-- Google Specific -->
+
+<!-- Tells Google not to show the sitelinks search box -->
+<meta name="google" content="nositelinkssearchbox">
+
+<!-- Tells Google not to provide a translation for this page -->
+<meta name="google" content="notranslate">
+
+<!-- Verify ownership for Google Search Console -->
+<meta name="google-site-verification" content="verification_token">
+
+<!-- Used to name software used to build the website (i.e. - Wordpress, Dreamweaver) -->
+<meta name="generator" content="program">
+
+<!-- Short description of your sites subject -->
+<meta name="subject" content="your website's subject">
+
+<!-- Very short sentence describing the purpose of the website -->
+<meta name="abstract" content="">
+
+<!-- Describes the topic of the website -->
+<meta name="topic" content="">
+
+<!-- Brief summary of the company or purpose of the website -->
+<meta name="summary" content="">
+
+<!-- A deprecated tag that does the same as the keywords meta tag -->
+<meta name="classification" content="business">
+
+<!-- Full domain name or web address -->
+<meta name="url" content="https://example.com/">
+
+<!-- Does the same as URL, older and not supported -->
+<meta name="identifier-URL" content="https://example.com/">
+
+<meta name="directory" content="submission">
+
+<!-- Does the same function as the keywords tag -->
+<meta name="category" content="">
+
+<!-- Makes sure your website shows up in all countries and languages -->
+<meta name="coverage" content="Worldwide">
+
+<!-- Does the same as the coverage tag -->
+<meta name="distribution" content="Global">
+
+<!-- Gives a general age rating based on sites content -->
+<meta name="rating" content="General">
+
+<!-- Allows control over how referrer information is passed -->
+<meta name="referrer" content="never">
 
 <!-- Disable automatic detection and formatting of possible phone numbers -->
 <meta name="format-detection" content="telephone=no">
 
 <!-- Geo tags -->
-<meta name="ICBM" content="latitude, longitude" />
-<meta name="geo.position" content="latitude;longitude" />
-<meta name="geo.region" content="country[-state]" /><!-- Country code (ISO 3166-1): mandatory, state code (ISO 3166-2): optional; eg. content="US" / content="US-NY" -->
-<meta name="geo.placename" content="city/town" /><!-- eg. content="New York City" -->
+<meta name="ICBM" content="latitude, longitude">
+<meta name="geo.position" content="latitude;longitude">
+<meta name="geo.region" content="country[-state]"><!-- Country code (ISO 3166-1): mandatory, state code (ISO 3166-2): optional; eg. content="US" / content="US-NY" -->
+<meta name="geo.placename" content="city/town"><!-- eg. content="New York City" -->
 ```
 
+- [Meta tags that Google understands](https://support.google.com/webmasters/answer/79812?hl=en)
+- [WHATWG Wiki: MetaExtensions](https://wiki.whatwg.org/wiki/MetaExtensions)
 - [ICBM on Wikipedia](https://en.wikipedia.org/wiki/ICBM_address#Modern_use)
 - [Geotagging on Wikipedia](https://en.wikipedia.org/wiki/Geotagging#HTML_pages)
 
-### Meta Elements Not Recommended
+### Meta: Not Recommended
 Below are the meta attributes which are not recommended for use:
 
 ```html
@@ -100,8 +184,9 @@ Below are the meta attributes which are not recommended for use:
 <!-- Tells search bots to revisit the page after a period. This is not supported because most Search Engines now use random intervals for re-crawling a webpage -->
 <meta name="revisit-after" content="7 days">
 
-<!-- Google strongly advises not to use this. Better to set up server-side (e.g. Apache, nginx) redirects instead -->
-<meta http-equiv="refresh" content="300;url=https://example.com/">
+<!-- Sends user to a new URL after a certain amount of time -->
+<!-- The W3C recommends that this tag not be used. Google recommends using a server-side 301 redirect instead. -->
+<meta http-equiv="refresh" content="300; url=https://example.com/">
 
 <!-- Cache Control -->
 <!-- Better to configure cache control server side -->
@@ -110,36 +195,77 @@ Below are the meta attributes which are not recommended for use:
 <meta http-equiv="Cache-Control" content="no-cache">
 ```
 
-## Link Elements
+## Link
 
 ``` html
-<link rel="copyright" href="copyright.html">
+<!-- Helps prevent duplicate content issues -->
+<link rel="canonical" href="https://example.com/2010/06/9-things-to-do-before-entering-social-media.html">
+
+<!-- Used to be included before the icon link, but is deprecated and no longer is used -->
+<link rel="shortlink" href="https://example.com/?p=42">
+
+<!-- Links to an AMP HTML version of the current document -->
+<link rel="amphtml" href="https://example.com/path/to/amp-version.html">
+
+<!-- Points to a CSS stylesheet -->
 <link rel="stylesheet" href="https://example.com/styles.css">
-<link rel="alternate" href="https://feeds.feedburner.com/martini" type="application/rss+xml" title="RSS">
-<link rel="alternate" href="https://example.com/feed.atom" type="application/atom+xml" title="Atom 0.3">
+
+<!-- Links to a JSON file that specifies "installation" credentials for web applications -->
+<link rel="manifest" href="manifest.json">
+
+<!-- Links to the author of the document -->
+<link rel="author" href="humans.txt">
+
+<!-- Refers to a copyright statement that applies to the links context -->
+<link rel="copyright" href="copyright.html">
+
+<!-- Gives a reference to a location in your document that may be in another language -->
 <link rel="alternate" href="https://es.example.com/" hreflang="es">
+
+<!-- Gives information about an author or another person -->
 <link rel="me" href="https://google.com/profiles/thenextweb" type="text/html">
 <link rel="me" href="mailto:name@example.com">
 <link rel="me" href="sms:+15035550125">
+
+<!-- Links to a document that contains an archive link to the current document -->
 <link rel="archives" href="https://example.com/2003/05/" title="May 2003">
+
+<!-- Links to top level resource in an hierarchical structure -->
 <link rel="index" href="https://example.com/" title="DeWitt Clinton">
+
+<!-- Gives the starting point of the document -->
 <link rel="start" href="https://example.com/photos/pattern_recognition_1_about/" title="Pattern Recognition 1">
+
+<!-- Leads to the preceding resource of the sequence the current document is in -->
 <link rel="prev" href="https://example.com/opensearch/opensearch-and-openid-a-sure-way-to-get-my-attention/" title="OpenSearch and OpenID? A sure way to get my attention.">
-<link rel="search" href="/open-search.xml" type="application/opensearchdescription+xml" title="Search Title">
+
+<!-- Gives a self reference - useful when the document has multiple possible references -->
 <link rel="self" type="application/atom+xml" href="https://example.com/atomFeed.php?page=3">
+
+<!-- The first, next, previous, and last documents in a series of documents, respectively -->
 <link rel="first" href="https://example.com/atomFeed.php">
 <link rel="next" href="https://example.com/atomFeed.php?page=4">
 <link rel="previous" href="https://example.com/atomFeed.php?page=2">
 <link rel="last" href="https://example.com/atomFeed.php?page=147">
-<link rel="shortlink" href="https://example.com/?p=43625">
-<link rel="canonical" href="https://example.com/2010/06/9-things-to-do-before-entering-social-media.html">
-<link rel="amphtml" href="https://www.example.com/url/to/amp-version.html">
+
+<!-- Used when using a 3rd party service to maintain a blog -->
 <link rel="EditURI" href="https://example.com/xmlrpc.php?rsd" type="application/rsd+xml" title="RSD">
+
+<!-- Forms an automated comment when another wordpress blog links to your wordpress blog or post -->
 <link rel="pingback" href="https://example.com/xmlrpc.php">
+
+<!-- Notifies a url when you link to it on your site -->
 <link rel="webmention" href="https://example.com/webmention">
-<link rel="manifest" href="manifest.json">
-<link rel="author" href="humans.txt">
+
+<!-- Loads in an external HTML file into the current HTML file -->
 <link rel="import" href="component.html">
+
+<!-- Open Search -->
+<link rel="search" href="/open-search.xml" type="application/opensearchdescription+xml" title="Search Title">
+
+<!-- Feeds -->
+<link rel="alternate" href="https://feeds.feedburner.com/example" type="application/rss+xml" title="RSS">
+<link rel="alternate" href="https://example.com/feed.atom" type="application/atom+xml" title="Atom 0.3">
 
 <!-- Prefetching, preloading, prebrowsing -->
 <link rel="dns-prefetch" href="//example.com/">
@@ -151,7 +277,7 @@ Below are the meta attributes which are not recommended for use:
 <!-- More info: https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
 ```
 
-### Link Elements Not Recommended
+### Link: Not Recommended
 Below are the link relations which are not recommended for use:
 
 ```html
@@ -174,6 +300,7 @@ Below are the link relations which are not recommended for use:
 ```
 
 - [All About Favicons (And Touch Icons)](https://bitsofco.de/all-about-favicons-and-touch-icons/)
+- [Favicon Cheat Sheet](https://github.com/audreyr/favicon-cheat-sheet)
 
 ## Social
 
@@ -251,8 +378,7 @@ Below are the link relations which are not recommended for use:
 
 - [oEmbed format](http://oembed.com/)
 
-## Browser/Platform
-
+## Browsers / Platforms
 
 ### Apple iOS
 
@@ -341,7 +467,7 @@ Below are the link relations which are not recommended for use:
 <meta name="msapplication-window" content="width=1024;height=768">
 ```
 
-### Microsoft Internet Explorer (LEGACY DO NOT USE)
+### Microsoft Internet Explorer: Legacy, Do Not Use!
 
 ``` html
 <!-- Disable the image toolbar when you mouse over images in IE 6 (https://msdn.microsoft.com/en-us/library/ms532986(v=vs.85).aspx) -->
@@ -360,11 +486,42 @@ Below are the link relations which are not recommended for use:
 <meta http-equiv="Site-Exit" content="revealtrans(duration=3,transition=12)">
 ```
 
+## App Links
+
+``` html
+<!-- iOS -->
+<meta property="al:ios:url" content="applinks://docs">
+<meta property="al:ios:app_store_id" content="12345">
+<meta property="al:ios:app_name" content="App Links">
+<!-- Android -->
+<meta property="al:android:url" content="applinks://docs">
+<meta property="al:android:app_name" content="App Links">
+<meta property="al:android:package" content="org.applinks">
+<!-- Web Fallback -->
+<meta property="al:web:url" content="http://applinks.org/documentation">
+<!-- More info: http://applinks.org/documentation/ -->
+```
+
+- [App Links Docs](http://applinks.org/documentation/)
+
+## Browsers (Chinese)
+
 ### 360 Browser
 
 ``` html
 <!-- select rendering engine in order -->
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
+```
+
+### QQ Mobile Browser
+
+``` html
+<!-- Locks the screen into the specified orientation -->
+<meta name="x5-orientation" content="landscape/portrait">
+<!-- Display this page in fullscreen -->
+<meta name="x5-fullscreen" content="true">
+<!-- Page will be displayed in "application mode"(fullscreen,etc.) -->
+<meta name="x5-page-mode" content="app">
 ```
 
 ### UC Mobile Browser
@@ -388,42 +545,13 @@ Below are the link relations which are not recommended for use:
 
 - [UC Browser Docs](http://www.uc.cn/download/UCBrowser_U3_API.doc)
 
-### QQ Mobile Browser
-
-``` html
-<!-- Locks the screen into the specified orientation -->
-<meta name="x5-orientation" content="landscape/portrait">
-<!-- Display this page in fullscreen -->
-<meta name="x5-fullscreen" content="true">
-<!-- Page will be displayed in "application mode"(fullscreen,etc.) -->
-<meta name="x5-page-mode" content="app">
-```
-
-## App Links
-
-``` html
-<!-- iOS -->
-<meta property="al:ios:url" content="applinks://docs">
-<meta property="al:ios:app_store_id" content="12345">
-<meta property="al:ios:app_name" content="App Links">
-<!-- Android -->
-<meta property="al:android:url" content="applinks://docs">
-<meta property="al:android:app_name" content="App Links">
-<meta property="al:android:package" content="org.applinks">
-<!-- Web Fallback -->
-<meta property="al:web:url" content="http://applinks.org/documentation">
-<!-- More info: http://applinks.org/documentation/ -->
-```
-
-- [App Links Docs](http://applinks.org/documentation/)
-
 ## Notes
 
 ### Performance
 Moving the `href` attribute to the beginning of an element improves compression when GZIP is enabled, because the `href` attribute is used in `a`, `base` and `link` tags.
 
 Example:
-```
+``` html
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 ```
 
@@ -431,6 +559,17 @@ Example:
 
 - [HTML5 Boilerplate Docs: The HTML](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md)
 - [HTML5 Boilerplate Docs: Extend and customize](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/extend.md)
+
+## Related Projects
+
+- [html-head-snippets](https://github.com/joshbuchea/atom-html-head-snippets) - Atom package for `HEAD` snippets
+- [head-it](https://github.com/hemanth/head-it) - CLI interface for `HEAD` snippets
+- [vue-head](https://github.com/ktquez/vue-head) - Manipulating the meta information of the `HEAD` tag for Vue.js
+
+## Translations
+
+- [Japanese](http://coliss.com/articles/build-websites/operation/work/collection-of-html-head-elements.html)
+- [Russian/Русский](https://github.com/Konfuze/HEAD)
 
 ## Contributing
 
@@ -441,6 +580,10 @@ Please follow these steps for pull requests:
 - Use double quotes on attributes
 - Don't include a trailing slash in self-closing elements — the HTML5 spec says they're optional
 - Consider including a link to documentation that supports your change
+
+### Contributors
+
+Check out all the super awesome [contributors](https://github.com/joshbuchea/HEAD/graphs/contributors).
 
 ## Author
 
